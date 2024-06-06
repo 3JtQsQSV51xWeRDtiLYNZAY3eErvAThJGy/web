@@ -6,17 +6,34 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "husky install",
+    "model:generate": "env-cmd sequelize-cli model:generate",
+    "seed": "env-cmd sequelize-cli db:seed:all",
+    "migrate": "env-cmd sequelize-cli db:migrate",
+    "migrate:rollback": "env-cmd sequelize-cli db:migrate:undo",
+    "migrate:rollback:all": "env-cmd sequelize-cli db:migrate:undo:all"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.3"
+    "dotenv": "^16.4.5",
+    "env-cmd": "^10.1.0",
+    "mysql2": "^3.10.0",
+    "next": "14.2.3",
+    "next-connect": "^1.0.0",
+    "pg": "^8.12.0",
+    "pg-hstore": "^2.3.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7",
+    "winston": "^3.13.0",
+    "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "eslint-config-next": "14.2.3",
+    "postcss": "^8",
+    "sequelize-cli": "^6.6.2",
+    "tailwindcss": "^3.4.1"
   }
 }
